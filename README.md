@@ -10,6 +10,8 @@ Privacy-preserving contact pages for lost personal items equipped with NFC/QR ta
 | `k2.html` | Key ring 2 |
 | `k3.html` | Key ring 3 |
 | `k4.html` | Key ring 4 |
+| `p1.html` | phone 1 |
+| `p2.html` | phone 2 |
 | `w1.html` | Wallet 1 |
 | `w2.html` | Wallet 2 |
 
