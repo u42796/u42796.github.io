@@ -1,0 +1,83 @@
+<!--
+  FILE:         index.html
+  PURPOSE:      Public start page of the deployment site
+  SPEC:         See README.md, Section 5 (Landing Page Specification)
+  GENERATED:    By build_pages.py from index_template.html v1.1.0.
+                Do not edit by hand: change the template and regenerate.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'none'; base-uri 'none'; form-action 'none'">
+    <meta name="referrer" content="no-referrer">
+    <title>u42796.github.io</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        main {
+            background: #ffffff;
+            padding: 30px 24px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            max-width: 640px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        h1 { margin-top: 0; font-size: 1.5rem; color: #111827; overflow-wrap: anywhere; }
+        h2 { font-size: 1.15rem; color: #111827; margin-top: 28px; }
+        p, li { line-height: 1.5; color: #374151; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid #e5e7eb; }
+        th { color: #111827; font-weight: 600; }
+        a { color: #1d4ed8; }                         /* 6.70:1 on white */
+        a:focus-visible { outline: 3px solid #111827; outline-offset: 2px; }
+        td a { display: inline-block; min-height: 24px; }
+        code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.95em; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>u42796.github.io</h1>
+        <p>Privacy-preserving contact pages for lost personal items equipped with NFC/QR tags.</p>
+
+        <h2>Contents</h2>
+        <table>
+            <thead>
+                <tr><th scope="col">File</th><th scope="col">Asset</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><a href="b1.html"><code>b1.html</code></a></td><td>Bag 1</td></tr>
+                <tr><td><a href="b2.html"><code>b2.html</code></a></td><td>Bag 2</td></tr>
+                <tr><td><a href="k1.html"><code>k1.html</code></a></td><td>Key ring 1</td></tr>
+                <tr><td><a href="k2.html"><code>k2.html</code></a></td><td>Key ring 2</td></tr>
+                <tr><td><a href="k3.html"><code>k3.html</code></a></td><td>Key ring 3</td></tr>
+                <tr><td><a href="k4.html"><code>k4.html</code></a></td><td>Key ring 4</td></tr>
+                <tr><td><a href="p1.html"><code>p1.html</code></a></td><td>Phone 1</td></tr>
+                <tr><td><a href="p2.html"><code>p2.html</code></a></td><td>Phone 2</td></tr>
+                <tr><td><a href="s1.html"><code>s1.html</code></a></td><td>Suitcase 1</td></tr>
+                <tr><td><a href="s2.html"><code>s2.html</code></a></td><td>Suitcase 2</td></tr>
+                <tr><td><a href="w1.html"><code>w1.html</code></a></td><td>Wallet 1</td></tr>
+                <tr><td><a href="w2.html"><code>w2.html</code></a></td><td>Wallet 2</td></tr>
+            </tbody>
+        </table>
+        <p>Update this table when adding or removing asset pages.</p>
+
+        <h2>Important</h2>
+        <ul>
+            <li><strong>Do not rename</strong> this repository or the GitHub account. All NFC tags and printed QR codes contain hardcoded URLs. After a rename, anyone could claim the old username and publish content under these URLs.</li>
+            <li><strong>Do not use <code>git push</code></strong> from a local machine. Change files only through the GitHub web interface (editor or "Add file" → "Upload files") to prevent email leakage in commit metadata.</li>
+            <li><strong>Keep two-factor authentication enabled</strong> on this account.</li>
+            <li><strong>Do not add</strong> real names, personal email addresses, or other identifying information to any file in this repository.</li>
+        </ul>
+    </main>
+</body>
+</html>
