@@ -2,7 +2,7 @@
   FILE:         p1.html
   PURPOSE:      Deployed landing page for asset P1 (phone)
   SPEC:         See README.md, Section 5 (Landing Page Specification)
-  GENERATED:    By build_pages.py from landing_page_template.html v1.1.0.
+  GENERATED:    By build_pages.py from landing_page_template.html v1.1.2.
                 Do not edit by hand: change the template and regenerate.
 -->
 <!DOCTYPE html>
@@ -103,6 +103,7 @@
         .btn-phone:hover     { background-color: #1e40af; }  /* 8.72:1 */
         .btn-phone:active    { background-color: #1e3a8a; }  /* 10.36:1 */
         .emoji { margin-right: 10px; font-size: 1.2rem; }
+        .note { font-size: 0.95rem; color: #4b5563; margin: 4px 0 0; }  /* 7.56:1 */
     </style>
 </head>
 <body>
@@ -126,7 +127,7 @@
             <nav aria-label="Kontakt">
                 <a href="https://wa.me/41784809594?text=Hallo,%20ich%20habe%20den%20Gegenstand%20(Fund-ID:%20P1)%20gefunden!" class="btn btn-whatsapp"><span class="emoji" aria-hidden="true">&#128172;</span> WhatsApp Nachricht</a>
                 <a href="mailto:lostandfound.countless678@passfwd.com?subject=Gefunden:%20Fund-ID%20P1" class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> E-Mail senden</a>
-                <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Direkt anrufen</a>
+                <p class="note">Solange dieses Telefon fehlt, ist der Eigentümer telefonisch nicht erreichbar. Bitte per WhatsApp oder E-Mail melden.</p>
             </nav>
         </div>
 
@@ -138,7 +139,7 @@
             <nav aria-label="Contact">
                 <a href="https://wa.me/41784809594?text=Hello,%20I%20found%20your%20item%20(ID:%20P1)!" class="btn btn-whatsapp"><span class="emoji" aria-hidden="true">&#128172;</span> Send WhatsApp</a>
                 <a href="mailto:lostandfound.countless678@passfwd.com?subject=Found%20Item:%20ID%20P1" class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> Send email</a>
-                <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Call directly</a>
+                <p class="note">While this phone is missing, the owner cannot be reached by phone. Please use WhatsApp or email.</p>
             </nav>
         </div>
 
@@ -150,7 +151,7 @@
             <nav aria-label="Contact">
                 <a href="https://wa.me/41784809594?text=Bonjour,%20j'ai%20trouv%C3%A9%20votre%20objet%20(ID:%20P1)%20!" class="btn btn-whatsapp"><span class="emoji" aria-hidden="true">&#128172;</span> Message WhatsApp</a>
                 <a href="mailto:lostandfound.countless678@passfwd.com?subject=Objet%20trouv%C3%A9:%20ID%20P1" class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> Envoyer un e-mail</a>
-                <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Appeler directement</a>
+                <p class="note">Tant que ce téléphone est perdu, le propriétaire n’est pas joignable par téléphone. Merci d’utiliser WhatsApp ou l’e-mail.</p>
             </nav>
         </div>
 
@@ -162,7 +163,7 @@
             <nav aria-label="Contatto">
                 <a href="https://wa.me/41784809594?text=Salve,%20ho%20trovato%20il%20Suo%20oggetto%20(ID:%20P1)!" class="btn btn-whatsapp"><span class="emoji" aria-hidden="true">&#128172;</span> Messaggio WhatsApp</a>
                 <a href="mailto:lostandfound.countless678@passfwd.com?subject=Oggetto%20trovato:%20ID%20P1" class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> Invia un'e-mail</a>
-                <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Chiama subito</a>
+                <p class="note">Finché questo telefono è smarrito, il proprietario non è raggiungibile per telefono. Si prega di usare WhatsApp o l’e-mail.</p>
             </nav>
         </div>
     </main>
