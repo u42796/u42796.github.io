@@ -2,7 +2,7 @@
   FILE:         w2.html
   PURPOSE:      Deployed landing page for asset W2 (wallet)
   SPEC:         See README.md, Section 5 (Landing Page Specification)
-  GENERATED:    By build_pages.py from landing_page_template.html v1.3.1.
+  GENERATED:    By build_pages.py from landing_page_template.html v1.3.2.
                 Do not edit by hand: change the template and regenerate.
 -->
 <!DOCTYPE html>
@@ -64,7 +64,7 @@
         /* --- Typography --- */
         .fund-id { font-size: 0.85rem; color: #4b5563; text-transform: uppercase; font-weight: 600; margin-bottom: 5px; }
         h1 { margin-top: 0; font-size: 1.5rem; color: #111827; }
-        p { line-height: 1.5; color: #4b5563; margin-bottom: 25px; }
+        p { line-height: 1.5; color: #1f2937; margin-bottom: 25px; }  /* running text 14.68:1 (README §5.4) */
 
         .reward-badge {
             background-color: #fef2f2;
@@ -103,10 +103,10 @@
         .btn-phone:hover     { background-color: #1e40af; }  /* 8.72:1 */
         .btn-phone:active    { background-color: #1e3a8a; }  /* 10.36:1 */
         .emoji { margin-right: 10px; font-size: 1.2rem; }
-        /* Two text sizes (README §5.4): the no-call note replaces a button and is body text (1rem);
-           the hints are supplementary and clearly smaller (0.8125rem = 13 CSS px). */
-        .note { font-size: 1rem; line-height: 1.5; color: #4b5563; margin: 4px 0 0; }  /* 7.56:1 */
-        .hint { font-size: 0.8125rem; line-height: 1.5; color: #4b5563; margin: 8px 0 0; }  /* 7.56:1 */
+        /* One size and one colour for all running text (README §5.4): intro, no-call note and hints
+           1rem (16 CSS px) in #1f2937; the hints are set apart from the buttons by spacing only. */
+        .note { font-size: 1rem; line-height: 1.5; color: #1f2937; margin: 4px 0 0; }  /* 14.68:1 */
+        .hint { font-size: 1rem; line-height: 1.5; color: #1f2937; margin: 12px 0 0; }  /* 14.68:1 */
         nav + .hint { margin-top: 24px; }
     </style>
 </head>
