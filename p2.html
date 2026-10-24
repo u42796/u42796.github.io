@@ -2,7 +2,7 @@
   FILE:         p2.html
   PURPOSE:      Deployed landing page for asset P2 (phone)
   SPEC:         See README.md, Section 5 (Landing Page Specification)
-  GENERATED:    By build_pages.py from landing_page_template.html v1.2.0.
+  GENERATED:    By build_pages.py from landing_page_template.html v1.3.0.
                 Do not edit by hand: change the template and regenerate.
 -->
 <!DOCTYPE html>
@@ -104,6 +104,7 @@
         .btn-phone:active    { background-color: #1e3a8a; }  /* 10.36:1 */
         .emoji { margin-right: 10px; font-size: 1.2rem; }
         .note { font-size: 0.95rem; color: #4b5563; margin: 4px 0 0; }  /* 7.56:1 */
+        .hint { font-size: 0.9rem; line-height: 1.45; color: #4b5563; margin: 16px 0 0; }  /* 7.56:1 */
     </style>
 </head>
 <body>
@@ -113,6 +114,7 @@
         <div id="lang-nav" class="lang-switch" role="group" aria-label="Language">
             <button id="btn-de" type="button" lang="de" aria-pressed="false">DE</button>
             <button id="btn-en" type="button" lang="en" class="active" aria-pressed="true">EN</button>
+            <button id="btn-es" type="button" lang="es" aria-pressed="false">ES</button>
             <button id="btn-fr" type="button" lang="fr" aria-pressed="false">FR</button>
             <button id="btn-it" type="button" lang="it" aria-pressed="false">IT</button>
         </div>
@@ -120,15 +122,17 @@
 
         <!-- GERMAN -->
         <div id="content-de" class="lang-content" lang="de">
-            <div class="fund-id">Handy · Fund-ID: P2</div>
+            <div class="fund-id">Telefon · Fund-ID: P2</div>
             <h1>Gegenstand gefunden?</h1>
             <div class="reward-badge"><span aria-hidden="true">&#127942;</span> Finderlohn zugesichert</div>
             <p>Vielen Dank für Ihre Hilfe.<br>Bitte kontaktieren Sie den Eigentümer über einen der folgenden Wege:</p>
             <nav aria-label="Kontakt">
-                <a href="https://wa.me/41784809594?text=Hallo,%20ich%20habe%20Ihr%20Handy%20gefunden%20(Fund-ID:%20P2).%20Bitte%20melden%20Sie%20sich%20wegen%20der%20R%C3%BCckgabe." class="btn btn-whatsapp"><span class="emoji" aria-hidden="true">&#128172;</span> WhatsApp Nachricht</a>
-                <a href="mailto:lostandfound.countless678@passfwd.com?subject=Fundsache:%20Handy%20(Fund-ID:%20P2)&amp;body=Hallo,%20ich%20habe%20Ihr%20Handy%20gefunden%20(Fund-ID:%20P2).%20Bitte%20melden%20Sie%20sich%20wegen%20der%20R%C3%BCckgabe." class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> E-Mail senden</a>
+                <a href="https://wa.me/41784809594?text=Hallo,%20ich%20habe%20Ihr%20Telefon%20gefunden%20(Fund-ID:%20P2).%20Bitte%20melden%20Sie%20sich%20wegen%20der%20R%C3%BCckgabe." class="btn btn-whatsapp"><span class="emoji" aria-hidden="true">&#128172;</span> WhatsApp Nachricht</a>
+                <a href="mailto:lostandfound.countless678@passfwd.com?subject=Fundsache:%20Telefon%20(Fund-ID:%20P2)&amp;body=Hallo,%20ich%20habe%20Ihr%20Telefon%20gefunden%20(Fund-ID:%20P2).%20Bitte%20melden%20Sie%20sich%20wegen%20der%20R%C3%BCckgabe." class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> E-Mail senden</a>
                 <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Direkt anrufen</a>
             </nav>
+            <p class="hint">Die Nachricht ist vorbereitet – Sie müssen sie nur noch absenden. Ein Foto oder Ihr Standort hilft zusätzlich.</p>
+            <p class="hint">Sie können nicht warten? Geben Sie den Gegenstand bitte bei einem Fundbüro, der Polizei oder am Schalter von Airline oder Bahn ab und teilen Sie kurz mit, wo.</p>
         </div>
 
         <!-- ENGLISH (Default / No-JS Fallback) -->
@@ -142,6 +146,23 @@
                 <a href="mailto:lostandfound.countless678@passfwd.com?subject=Found%20item:%20Phone%20(Item%20ID:%20P2)&amp;body=Hello,%20I%20found%20your%20phone%20(Item%20ID:%20P2).%20Please%20get%20back%20to%20me%20about%20returning%20it." class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> Send email</a>
                 <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Call directly</a>
             </nav>
+            <p class="hint">The message is ready – you only need to send it. A photo or your location also helps.</p>
+            <p class="hint">Can’t wait? Please hand the item in at a lost-and-found office, the police or an airline or railway desk, and let the owner know where.</p>
+        </div>
+
+        <!-- SPANISH -->
+        <div id="content-es" class="lang-content" lang="es">
+            <div class="fund-id">Teléfono · ID del objeto: P2</div>
+            <h1>¿Ha encontrado un objeto?</h1>
+            <div class="reward-badge"><span aria-hidden="true">&#127942;</span> Recompensa garantizada</div>
+            <p>Gracias por su ayuda.<br>Póngase en contacto con el propietario por una de estas vías:</p>
+            <nav aria-label="Contacto">
+                <a href="https://wa.me/41784809594?text=Hola,%20he%20encontrado%20su%20tel%C3%A9fono%20(ID%20del%20objeto:%20P2).%20P%C3%B3ngase%20en%20contacto%20conmigo%20para%20la%20devoluci%C3%B3n,%20por%20favor." class="btn btn-whatsapp"><span class="emoji" aria-hidden="true">&#128172;</span> Mensaje de WhatsApp</a>
+                <a href="mailto:lostandfound.countless678@passfwd.com?subject=Objeto%20encontrado:%20Tel%C3%A9fono%20(ID%20del%20objeto:%20P2)&amp;body=Hola,%20he%20encontrado%20su%20tel%C3%A9fono%20(ID%20del%20objeto:%20P2).%20P%C3%B3ngase%20en%20contacto%20conmigo%20para%20la%20devoluci%C3%B3n,%20por%20favor." class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> Enviar correo</a>
+                <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Llamar directamente</a>
+            </nav>
+            <p class="hint">El mensaje ya está preparado: solo tiene que enviarlo. Una foto o su ubicación también ayudan.</p>
+            <p class="hint">¿No puede esperar? Entregue el objeto en una oficina de objetos perdidos, a la policía o en el mostrador de una aerolínea o del tren, e indique brevemente dónde.</p>
         </div>
 
         <!-- FRENCH -->
@@ -155,6 +176,8 @@
                 <a href="mailto:lostandfound.countless678@passfwd.com?subject=Objet%20trouv%C3%A9%20:%20T%C3%A9l%C3%A9phone%20(ID%20de%20l'objet%20:%20P2)&amp;body=Bonjour,%20j'ai%20trouv%C3%A9%20votre%20t%C3%A9l%C3%A9phone%20(ID%20de%20l'objet%20:%20P2).%20Merci%20de%20me%20recontacter%20pour%20la%20restitution." class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> Envoyer un e-mail</a>
                 <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Appeler directement</a>
             </nav>
+            <p class="hint">Le message est prêt – il vous suffit de l’envoyer. Une photo ou votre position est aussi utile.</p>
+            <p class="hint">Vous ne pouvez pas attendre ? Merci de déposer l’objet dans un bureau des objets trouvés, à la police ou au guichet d’une compagnie aérienne ou ferroviaire, et d’indiquer brièvement où.</p>
         </div>
 
         <!-- ITALIAN -->
@@ -168,6 +191,8 @@
                 <a href="mailto:lostandfound.countless678@passfwd.com?subject=Oggetto%20trovato:%20Telefono%20(ID%20oggetto:%20P2)&amp;body=Buongiorno,%20ho%20trovato%20il%20Suo%20telefono%20(ID%20oggetto:%20P2).%20Mi%20ricontatti%20per%20la%20restituzione,%20per%20favore." class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> Invia un'e-mail</a>
                 <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Chiama subito</a>
             </nav>
+            <p class="hint">Il messaggio è già pronto – basta inviarlo. Anche una foto o la Sua posizione sono utili.</p>
+            <p class="hint">Non può aspettare? Consegni l’oggetto a un ufficio oggetti smarriti, alla polizia o allo sportello di una compagnia aerea o ferroviaria e indichi brevemente dove.</p>
         </div>
     </main>
 
@@ -176,6 +201,7 @@
         const i18n = {
             de: { title: "Gegenstand gefunden", ariaLabel: "Sprache" },
             en: { title: "Item found", ariaLabel: "Language" },
+            es: { title: "Objeto encontrado", ariaLabel: "Idioma" },
             fr: { title: "Objet trouvé", ariaLabel: "Langue" },
             it: { title: "Oggetto trovato", ariaLabel: "Lingua" }
         };
