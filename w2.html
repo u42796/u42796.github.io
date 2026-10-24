@@ -2,7 +2,7 @@
   FILE:         w2.html
   PURPOSE:      Deployed landing page for asset W2 (wallet)
   SPEC:         See README.md, Section 5 (Landing Page Specification)
-  GENERATED:    By build_pages.py from landing_page_template.html v1.3.2.
+  GENERATED:    By build_pages.py from landing_page_template.html v1.3.3.
                 Do not edit by hand: change the template and regenerate.
 -->
 <!DOCTYPE html>
@@ -214,7 +214,7 @@
         /**
          * Set the active language. Updates DOM visibility, ARIA states,
          * document title, and html lang attribute.
-         * @param {string} lang - ISO 639-1 language code (de|en|fr|it)
+         * @param {string} lang - ISO 639-1 language code (de|en|es|fr|it)
          */
         function setLanguage(lang) {
             // Fallback to English if unsupported language requested
@@ -245,6 +245,8 @@
         /**
          * Pick the first supported language from the browser's ordered preference list
          * (navigator.languages), e.g. ["gsw-CH", "de-CH", "en"] → "de".
+         * Compares the complete primary language subtag (README §5.2), so that a three-letter
+         * code such as "frr" (North Frisian) or "gsw" (Swiss German) is not read as "fr" or "gs".
          * Falls back to navigator.language, then to English.
          * @returns {string} supported ISO 639-1 code
          */
@@ -253,7 +255,7 @@
                 ? navigator.languages
                 : [navigator.language || navigator.userLanguage || 'en'];
             for (var i = 0; i < prefs.length; i++) {
-                var code = String(prefs[i] || '').slice(0, 2).toLowerCase();
+                var code = String(prefs[i] || '').split(/[-_]/)[0].toLowerCase();
                 if (supportedLangs.includes(code)) return code;
             }
             return 'en';
