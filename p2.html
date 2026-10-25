@@ -2,7 +2,7 @@
   FILE:         p2.html
   PURPOSE:      Deployed landing page for asset P2 (phone)
   SPEC:         See README.md, Section 5 (Landing Page Specification)
-  GENERATED:    By build_pages.py from landing_page_template.html v1.3.3.
+  GENERATED:    By build_pages.py from landing_page_template.html v1.4.0.
                 Do not edit by hand: change the template and regenerate.
 -->
 <!DOCTYPE html>
@@ -45,6 +45,7 @@
             gap: 4px;
             margin-bottom: 15px;
         }
+        .lang-switch[hidden] { display: none; }  /* 'hidden' alone loses against display: flex */
         .lang-switch button {
             background: none;
             border: none;
@@ -108,13 +109,15 @@
         .note { font-size: 1rem; line-height: 1.5; color: #1f2937; margin: 4px 0 0; }  /* 14.68:1 */
         .hint { font-size: 1rem; line-height: 1.5; color: #1f2937; margin: 12px 0 0; }  /* 14.68:1 */
         nav + .hint { margin-top: 24px; }
+        /* Alias as text: one long press selects the whole address; long aliases wrap at 320 CSS px. */
+        .addr { font-weight: 600; overflow-wrap: anywhere; -webkit-user-select: all; user-select: all; }
     </style>
 </head>
 <body>
 
     <main>
         <!-- Language Switcher -->
-        <div id="lang-nav" class="lang-switch" role="group" aria-label="Language">
+        <div id="lang-nav" class="lang-switch" role="group" aria-label="Language" hidden>
             <button id="btn-de" type="button" lang="de" aria-pressed="false">DE</button>
             <button id="btn-en" type="button" lang="en" class="active" aria-pressed="true">EN</button>
             <button id="btn-es" type="button" lang="es" aria-pressed="false">ES</button>
@@ -135,6 +138,7 @@
                 <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Direkt anrufen</a>
             </nav>
             <p class="hint">Die Nachricht ist vorbereitet – Sie müssen sie nur noch absenden. Ein Foto oder Ihr Standort hilft zusätzlich.</p>
+            <p class="hint">Öffnet sich weder WhatsApp noch E-Mail? Schreiben Sie von einem beliebigen E-Mail-Konto an <span class="addr">lostandfound.countless678@passfwd.com</span> und nennen Sie die Fund-ID P2.</p>
             <p class="hint">Sie können nicht warten? Geben Sie den Gegenstand bitte bei einem Fundbüro, der Polizei oder am Schalter von Airline oder Bahn ab und teilen Sie kurz mit, wo.</p>
         </div>
 
@@ -150,6 +154,7 @@
                 <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Call directly</a>
             </nav>
             <p class="hint">The message is ready – you only need to send it. A photo or your location also helps.</p>
+            <p class="hint">Neither WhatsApp nor email opens? Write from any email account to <span class="addr">lostandfound.countless678@passfwd.com</span> and mention the Item ID P2.</p>
             <p class="hint">Can’t wait? Please hand the item in at a lost-and-found office, the police or an airline or railway desk, and let the owner know where.</p>
         </div>
 
@@ -165,6 +170,7 @@
                 <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Llamar directamente</a>
             </nav>
             <p class="hint">El mensaje ya está preparado: solo tiene que enviarlo. Una foto o su ubicación también ayudan.</p>
+            <p class="hint">¿No se abre ni WhatsApp ni el correo? Escriba desde cualquier cuenta de correo a <span class="addr">lostandfound.countless678@passfwd.com</span> e indique el ID del objeto P2.</p>
             <p class="hint">¿No puede esperar? Entregue el objeto en una oficina de objetos perdidos, a la policía o en el mostrador de una aerolínea o del tren, e indique brevemente dónde.</p>
         </div>
 
@@ -180,6 +186,7 @@
                 <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Appeler directement</a>
             </nav>
             <p class="hint">Le message est prêt – il vous suffit de l’envoyer. Une photo ou votre position est aussi utile.</p>
+            <p class="hint">WhatsApp et la messagerie ne s’ouvrent pas ? Écrivez depuis n’importe quelle adresse e-mail à <span class="addr">lostandfound.countless678@passfwd.com</span> en indiquant l’ID de l’objet P2.</p>
             <p class="hint">Vous ne pouvez pas attendre ? Merci de déposer l’objet dans un bureau des objets trouvés, à la police ou au guichet d’une compagnie aérienne ou ferroviaire, et d’indiquer brièvement où.</p>
         </div>
 
@@ -195,6 +202,7 @@
                 <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Chiama subito</a>
             </nav>
             <p class="hint">Il messaggio è già pronto – basta inviarlo. Anche una foto o la Sua posizione sono utili.</p>
+            <p class="hint">Non si apre né WhatsApp né l’e-mail? Scriva da un qualsiasi indirizzo e-mail a <span class="addr">lostandfound.countless678@passfwd.com</span> indicando l’ID oggetto P2.</p>
             <p class="hint">Non può aspettare? Consegni l’oggetto a un ufficio oggetti smarriti, alla polizia o allo sportello di una compagnia aerea o ferroviaria e indichi brevemente dove.</p>
         </div>
     </main>
@@ -270,6 +278,10 @@
         });
 
         setLanguage(detectLanguage());
+
+        // Show the language buttons only now: without JavaScript they would not react (README §5.2, F4).
+        var langNav = document.getElementById('lang-nav');
+        if (langNav) langNav.hidden = false;
     </script>
 
 </body>

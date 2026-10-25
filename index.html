@@ -2,7 +2,7 @@
   FILE:         index.html
   PURPOSE:      Public start page of the deployment site
   SPEC:         See README.md, Section 5 (Landing Page Specification)
-  GENERATED:    By build_pages.py from index_template.html v1.1.0.
+  GENERATED:    By build_pages.py from index_template.html v1.2.0.
                 Do not edit by hand: change the template and regenerate.
 -->
 <!DOCTYPE html>
@@ -69,12 +69,13 @@
                 <tr><td><a href="w2.html"><code>w2.html</code></a></td><td>Wallet 2</td></tr>
             </tbody>
         </table>
-        <p>Update this table when adding or removing asset pages.</p>
+        <p>This table is generated together with the pages and is not edited by hand.</p>
 
         <h2>Important</h2>
         <ul>
             <li><strong>Do not rename</strong> this repository or the GitHub account. All NFC tags and printed QR codes contain hardcoded URLs. After a rename, anyone could claim the old username and publish content under these URLs.</li>
-            <li><strong>Do not use <code>git push</code></strong> from a local machine. Change files only through the GitHub web interface (editor or "Add file" → "Upload files") to prevent email leakage in commit metadata.</li>
+            <li><strong>Do not edit pages here.</strong> All pages, including this one, are generated from one configuration. To change a page: change the configuration, regenerate the pages, upload the generated files, then verify the published site. A page edited by hand no longer matches the generated version and fails the integrity check.</li>
+            <li><strong>Do not use <code>git push</code></strong> from a local machine. Change files only through the GitHub web interface ("Add file" → "Upload files" for generated pages, "Delete file" for retired pages) to prevent email leakage in commit metadata.</li>
             <li><strong>Keep two-factor authentication enabled</strong> on this account.</li>
             <li><strong>Do not add</strong> real names, personal email addresses, or other identifying information to any file in this repository.</li>
         </ul>
