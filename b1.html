@@ -2,7 +2,7 @@
   FILE:         b1.html
   PURPOSE:      Deployed landing page for asset B1 (bag)
   SPEC:         See README.md, Section 5 (Landing Page Specification)
-  GENERATED:    By build_pages.py from landing_page_template.html v1.4.0.
+  GENERATED:    By build_pages.py from landing_page_template.html v1.4.1.
                 Do not edit by hand: change the template and regenerate.
 -->
 <!DOCTYPE html>
@@ -103,7 +103,10 @@
         .btn-phone           { background-color: #1d4ed8; }  /* 6.70:1 */
         .btn-phone:hover     { background-color: #1e40af; }  /* 8.72:1 */
         .btn-phone:active    { background-color: #1e3a8a; }  /* 10.36:1 */
-        .emoji { margin-right: 10px; font-size: 1.2rem; }
+        /* Inline SVG icons in the text colour (README §5.4): same contrast as the button text. */
+        .icon { width: 1.5em; height: 1.5em; margin-right: 10px; flex-shrink: 0;
+                fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
         /* One size and one colour for all running text (README §5.4): intro, no-call note and hints
            1rem (16 CSS px) in #1f2937; the hints are set apart from the buttons by spacing only. */
         .note { font-size: 1rem; line-height: 1.5; color: #1f2937; margin: 4px 0 0; }  /* 14.68:1 */
@@ -112,6 +115,12 @@
     </style>
 </head>
 <body>
+    <!-- Icon sprite: chat bubble, envelope, telephone handset (24 x 24, stroked in currentColor) -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M5.5 4h13A2.5 2.5 0 0 1 21 6.5v8a2.5 2.5 0 0 1-2.5 2.5H11l-4 3.5V17H5.5A2.5 2.5 0 0 1 3 14.5v-8A2.5 2.5 0 0 1 5.5 4z"/><path d="M8 10.5h.01M12 10.5h.01M16 10.5h.01" stroke-width="2.8"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.8 6.6 12 13l8.2-6.4"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h3.2a1 1 0 0 1 .95.7L10 7.4a1 1 0 0 1-.3 1L8 10c1.4 2.6 3.4 4.6 6 6l1.6-1.7a1 1 0 0 1 1-.3l3.7.85a1 1 0 0 1 .7.95V19a2 2 0 0 1-2 2C10.7 21 3 13.3 3 5a2 2 0 0 1 2-2z"/></symbol>
+    </svg>
 
     <main>
         <!-- Language Switcher -->
@@ -131,9 +140,9 @@
             <div class="reward-badge"><span aria-hidden="true">&#127942;</span> Finderlohn zugesichert</div>
             <p>Vielen Dank für Ihre Hilfe.<br>Bitte kontaktieren Sie den Eigentümer über einen der folgenden Wege:</p>
             <nav aria-label="Kontakt">
-                <a href="https://wa.me/41784809594?text=Hallo,%20ich%20habe%20Ihre%20Tasche%20gefunden%20(Fund-ID:%20B1).%20Bitte%20melden%20Sie%20sich%20wegen%20der%20R%C3%BCckgabe." class="btn btn-whatsapp"><span class="emoji" aria-hidden="true">&#128172;</span> WhatsApp Nachricht</a>
-                <a href="mailto:lostandfound.countless678@passfwd.com?subject=Fundsache:%20Tasche%20(Fund-ID:%20B1)&amp;body=Hallo,%20ich%20habe%20Ihre%20Tasche%20gefunden%20(Fund-ID:%20B1).%20Bitte%20melden%20Sie%20sich%20wegen%20der%20R%C3%BCckgabe." class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> E-Mail senden</a>
-                <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Direkt anrufen</a>
+                <a href="https://wa.me/41784809594?text=Hallo,%20ich%20habe%20Ihre%20Tasche%20gefunden%20(Fund-ID:%20B1).%20Bitte%20melden%20Sie%20sich%20wegen%20der%20R%C3%BCckgabe." class="btn btn-whatsapp"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chat"/></svg>WhatsApp Nachricht</a>
+                <a href="mailto:lostandfound.countless678@passfwd.com?subject=Fundsache:%20Tasche%20(Fund-ID:%20B1)&amp;body=Hallo,%20ich%20habe%20Ihre%20Tasche%20gefunden%20(Fund-ID:%20B1).%20Bitte%20melden%20Sie%20sich%20wegen%20der%20R%C3%BCckgabe." class="btn btn-email"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>E-Mail senden</a>
+                <a href="tel:+41784809594" class="btn btn-phone"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>Direkt anrufen</a>
             </nav>
             <p class="hint">Die Nachricht ist vorbereitet – Sie müssen sie nur noch absenden. Ein Foto oder Ihr Standort hilft zusätzlich.</p>
             <p class="hint">Sie können nicht warten? Geben Sie den Gegenstand bitte bei einem Fundbüro, der Polizei oder am Schalter von Airline oder Bahn ab und teilen Sie kurz mit, wo.</p>
@@ -146,9 +155,9 @@
             <div class="reward-badge"><span aria-hidden="true">&#127942;</span> Reward guaranteed</div>
             <p>Thank you for your help.<br>Please contact the owner using one of the following options:</p>
             <nav aria-label="Contact">
-                <a href="https://wa.me/41784809594?text=Hello,%20I%20found%20your%20bag%20(Item%20ID:%20B1).%20Please%20get%20back%20to%20me%20about%20returning%20it." class="btn btn-whatsapp"><span class="emoji" aria-hidden="true">&#128172;</span> Send WhatsApp</a>
-                <a href="mailto:lostandfound.countless678@passfwd.com?subject=Found%20item:%20Bag%20(Item%20ID:%20B1)&amp;body=Hello,%20I%20found%20your%20bag%20(Item%20ID:%20B1).%20Please%20get%20back%20to%20me%20about%20returning%20it." class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> Send email</a>
-                <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Call directly</a>
+                <a href="https://wa.me/41784809594?text=Hello,%20I%20found%20your%20bag%20(Item%20ID:%20B1).%20Please%20get%20back%20to%20me%20about%20returning%20it." class="btn btn-whatsapp"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chat"/></svg>Send WhatsApp</a>
+                <a href="mailto:lostandfound.countless678@passfwd.com?subject=Found%20item:%20Bag%20(Item%20ID:%20B1)&amp;body=Hello,%20I%20found%20your%20bag%20(Item%20ID:%20B1).%20Please%20get%20back%20to%20me%20about%20returning%20it." class="btn btn-email"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Send email</a>
+                <a href="tel:+41784809594" class="btn btn-phone"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>Call directly</a>
             </nav>
             <p class="hint">The message is ready – you only need to send it. A photo or your location also helps.</p>
             <p class="hint">Can’t wait? Please hand the item in at a lost-and-found office, the police or an airline or railway desk, and let the owner know where.</p>
@@ -161,9 +170,9 @@
             <div class="reward-badge"><span aria-hidden="true">&#127942;</span> Recompensa garantizada</div>
             <p>Gracias por su ayuda.<br>Póngase en contacto con el propietario por una de estas vías:</p>
             <nav aria-label="Contacto">
-                <a href="https://wa.me/41784809594?text=Hola,%20he%20encontrado%20su%20bolso%20(ID%20del%20objeto:%20B1).%20P%C3%B3ngase%20en%20contacto%20conmigo%20para%20la%20devoluci%C3%B3n,%20por%20favor." class="btn btn-whatsapp"><span class="emoji" aria-hidden="true">&#128172;</span> Mensaje de WhatsApp</a>
-                <a href="mailto:lostandfound.countless678@passfwd.com?subject=Objeto%20encontrado:%20Bolso%20(ID%20del%20objeto:%20B1)&amp;body=Hola,%20he%20encontrado%20su%20bolso%20(ID%20del%20objeto:%20B1).%20P%C3%B3ngase%20en%20contacto%20conmigo%20para%20la%20devoluci%C3%B3n,%20por%20favor." class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> Enviar correo</a>
-                <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Llamar directamente</a>
+                <a href="https://wa.me/41784809594?text=Hola,%20he%20encontrado%20su%20bolso%20(ID%20del%20objeto:%20B1).%20P%C3%B3ngase%20en%20contacto%20conmigo%20para%20la%20devoluci%C3%B3n,%20por%20favor." class="btn btn-whatsapp"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chat"/></svg>Mensaje de WhatsApp</a>
+                <a href="mailto:lostandfound.countless678@passfwd.com?subject=Objeto%20encontrado:%20Bolso%20(ID%20del%20objeto:%20B1)&amp;body=Hola,%20he%20encontrado%20su%20bolso%20(ID%20del%20objeto:%20B1).%20P%C3%B3ngase%20en%20contacto%20conmigo%20para%20la%20devoluci%C3%B3n,%20por%20favor." class="btn btn-email"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Enviar correo</a>
+                <a href="tel:+41784809594" class="btn btn-phone"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>Llamar directamente</a>
             </nav>
             <p class="hint">El mensaje ya está preparado: solo tiene que enviarlo. Una foto o su ubicación también ayudan.</p>
             <p class="hint">¿No puede esperar? Entregue el objeto en una oficina de objetos perdidos, a la policía o en el mostrador de una aerolínea o del tren, e indique brevemente dónde.</p>
@@ -176,9 +185,9 @@
             <div class="reward-badge"><span aria-hidden="true">&#127942;</span> Récompense garantie</div>
             <p>Merci pour votre aide.<br>Veuillez contacter le propriétaire via l'une des options suivantes :</p>
             <nav aria-label="Contact">
-                <a href="https://wa.me/41784809594?text=Bonjour,%20j'ai%20trouv%C3%A9%20votre%20sac%20(ID%20de%20l'objet%20:%20B1).%20Merci%20de%20me%20recontacter%20pour%20la%20restitution." class="btn btn-whatsapp"><span class="emoji" aria-hidden="true">&#128172;</span> Message WhatsApp</a>
-                <a href="mailto:lostandfound.countless678@passfwd.com?subject=Objet%20trouv%C3%A9%20:%20Sac%20(ID%20de%20l'objet%20:%20B1)&amp;body=Bonjour,%20j'ai%20trouv%C3%A9%20votre%20sac%20(ID%20de%20l'objet%20:%20B1).%20Merci%20de%20me%20recontacter%20pour%20la%20restitution." class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> Envoyer un e-mail</a>
-                <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Appeler directement</a>
+                <a href="https://wa.me/41784809594?text=Bonjour,%20j'ai%20trouv%C3%A9%20votre%20sac%20(ID%20de%20l'objet%20:%20B1).%20Merci%20de%20me%20recontacter%20pour%20la%20restitution." class="btn btn-whatsapp"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chat"/></svg>Message WhatsApp</a>
+                <a href="mailto:lostandfound.countless678@passfwd.com?subject=Objet%20trouv%C3%A9%20:%20Sac%20(ID%20de%20l'objet%20:%20B1)&amp;body=Bonjour,%20j'ai%20trouv%C3%A9%20votre%20sac%20(ID%20de%20l'objet%20:%20B1).%20Merci%20de%20me%20recontacter%20pour%20la%20restitution." class="btn btn-email"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Envoyer un e-mail</a>
+                <a href="tel:+41784809594" class="btn btn-phone"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>Appeler directement</a>
             </nav>
             <p class="hint">Le message est prêt – il vous suffit de l’envoyer. Une photo ou votre position est aussi utile.</p>
             <p class="hint">Vous ne pouvez pas attendre ? Merci de déposer l’objet dans un bureau des objets trouvés, à la police ou au guichet d’une compagnie aérienne ou ferroviaire, et d’indiquer brièvement où.</p>
@@ -191,9 +200,9 @@
             <div class="reward-badge"><span aria-hidden="true">&#127942;</span> Ricompensa garantita</div>
             <p>Grazie per l'aiuto.<br>Si prega di contattare il proprietario tramite una delle seguenti opzioni:</p>
             <nav aria-label="Contatto">
-                <a href="https://wa.me/41784809594?text=Buongiorno,%20ho%20trovato%20la%20Sua%20borsa%20(ID%20oggetto:%20B1).%20Mi%20ricontatti%20per%20la%20restituzione,%20per%20favore." class="btn btn-whatsapp"><span class="emoji" aria-hidden="true">&#128172;</span> Messaggio WhatsApp</a>
-                <a href="mailto:lostandfound.countless678@passfwd.com?subject=Oggetto%20trovato:%20Borsa%20(ID%20oggetto:%20B1)&amp;body=Buongiorno,%20ho%20trovato%20la%20Sua%20borsa%20(ID%20oggetto:%20B1).%20Mi%20ricontatti%20per%20la%20restituzione,%20per%20favore." class="btn btn-email"><span class="emoji" aria-hidden="true">&#9993;&#65039;</span> Invia un'e-mail</a>
-                <a href="tel:+41784809594" class="btn btn-phone"><span class="emoji" aria-hidden="true">&#128222;</span> Chiama subito</a>
+                <a href="https://wa.me/41784809594?text=Buongiorno,%20ho%20trovato%20la%20Sua%20borsa%20(ID%20oggetto:%20B1).%20Mi%20ricontatti%20per%20la%20restituzione,%20per%20favore." class="btn btn-whatsapp"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chat"/></svg>Messaggio WhatsApp</a>
+                <a href="mailto:lostandfound.countless678@passfwd.com?subject=Oggetto%20trovato:%20Borsa%20(ID%20oggetto:%20B1)&amp;body=Buongiorno,%20ho%20trovato%20la%20Sua%20borsa%20(ID%20oggetto:%20B1).%20Mi%20ricontatti%20per%20la%20restituzione,%20per%20favore." class="btn btn-email"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Invia un'e-mail</a>
+                <a href="tel:+41784809594" class="btn btn-phone"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>Chiama subito</a>
             </nav>
             <p class="hint">Il messaggio è già pronto – basta inviarlo. Anche una foto o la Sua posizione sono utili.</p>
             <p class="hint">Non può aspettare? Consegni l’oggetto a un ufficio oggetti smarriti, alla polizia o allo sportello di una compagnia aerea o ferroviaria e indichi brevemente dove.</p>
